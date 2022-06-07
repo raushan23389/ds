@@ -2,8 +2,7 @@ package com.learning.linkedlist;
 
 import com.learning.arraylist.Employee;
 
-public class Main {
-
+public class DoublyLinkedListImpl {
 	public static void main(String[] args) {
 		
 		Employee janeJones = new Employee("janes", "jones", 123);
@@ -11,18 +10,26 @@ public class Main {
 		Employee marrySmith = new Employee("Mary", "Smith", 22);
 		Employee mikeWilson = new Employee("Mike", "Wilson", 3245);
 		
-		EmployeeLinkedList list = new EmployeeLinkedList();
+		
+		EmployeeDoublyLinkedList list = new EmployeeDoublyLinkedList();
 		list.addToFront(janeJones);
 		list.addToFront(johnDoe);
 		list.addToFront(marrySmith);
 		list.addToFront(mikeWilson);
 		
 		list.printList();
+		
+		Employee billEnd = new Employee("bill", "End", 78);
+		list.addToEnd(billEnd);
+		list.printList();
 		System.out.println(list.getSize());
-		System.out.println(list.isEmpty());
 		
 		list.removeFromFront();
-		System.out.println(list.getSize());
+		list.printList();
+		
+		list.removeFromEnd();
 		list.printList();
 	}
+
+
 }
