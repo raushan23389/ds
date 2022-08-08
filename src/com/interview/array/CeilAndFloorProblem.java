@@ -1,4 +1,4 @@
-package com.interview.array;
+ package com.interview.array;
 import java.util.Scanner;
 
 public class CeilAndFloorProblem {
