@@ -4,20 +4,29 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PairSum {
+	 public static int[] twoSum(int[] nums, int target) {
+		 
+		 Map<Integer,Integer> map = new HashMap<>();
+		 int [] arr = new int[2];
+		 
+		 for(int i =0;i<nums.length;i++) {
+			 if(map.containsKey(target - nums[i])) {
+				 arr[0] = map.get(target - nums[i]);
+				 arr[1] = i;
+				 return arr;
+			 }
+			 else {
+				 map.put(nums[i], i);
+			 }
+		 }
+		 return arr;
+	        
+	    }
 	public static void main(String[] args) {
-		int[] intArray = {3,4,5,6,8,9};
-		int k =7;
-		Map<Integer, Integer> map = new HashMap<>();
-		for(int  i=0;i<intArray.length;i++) {
-			map.put(intArray[i],i);
+		int[]arr = {2,7,11,15};
+		twoSum(arr, 9);
+		
 		}
-		for(int i =0;i<intArray.length;i++) {
-			int numTofind = k-intArray[i];
-			
-			if(map.containsKey(numTofind) && map.get(numTofind)!=i) {
-				
-			}
-		}
-	}
+	
 
 }

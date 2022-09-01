@@ -46,7 +46,7 @@ public class BalancedBrackets {
 	private static boolean handleClosing(Stack<Character> stack, char corresoch) {
 		if(stack.size()==0) {
 			return false;
-		}else if(stack.peek()!= '(') {
+		}else if(stack.peek()!= corresoch) {
 			return false;
 		}else {
 			stack.pop();
